@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid myContainer">
+
+  <div class="row myRow">
+    <div class="col-2">
+      <app-flight-search
+        (searchClick)="onSearchClick($event)"
+      ></app-flight-search>
+    </div>
+    <div class="col-10">
+      <app-flight-list [data]="searchData"></app-flight-list>
+    </div>
+  </div>
+</div>

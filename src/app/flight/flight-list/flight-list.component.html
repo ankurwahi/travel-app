@@ -1,0 +1,66 @@
+<div class="container myContainer" *ngIf="data.isSubmitted">
+  <div class="mb20">
+    <h1>Travel Results</h1>
+    <h2 class="lead">
+      <strong class="text-danger">{{ data.searchData.length }}</strong> results were found
+      for the search for <strong class="text-danger">Tour</strong>
+    </h2>
+  </div>
+  <section class="col-xs-12 col-sm-6 col-md-12">
+    <div *ngFor="let item of data.searchData">
+      <article class="search-result row">
+        <div class="col-xs-12 col-sm-12 col-md-2">
+          <a href="#" title="Lorem ipsum" class="thumbnail"
+            ><img
+              *ngIf="item.transport == 'car'"
+              src="http://icons.veryicon.com/png/Business/Or%20Application/car.png"
+              alt="Lorem ipsum"
+              height="75"
+          /></a>
+          <a href="#" title="Lorem ipsum" class="thumbnail"
+            ><img
+              *ngIf="item.transport == 'bus'"
+              src="http://pngimg.com/uploads/bus/bus_PNG8635.png"
+              alt="Lorem ipsum"
+              height="75"
+          /></a>
+          <a href="#" title="Lorem ipsum" class="thumbnail"
+            ><img
+              *ngIf="item.transport == 'train'"
+              src="http://pngimg.com/uploads/trian/trian_PNG16655.png"
+              alt="Lorem ipsum"
+              height="75"
+          /></a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <ul class="meta-search">
+            <li>
+              <i class="glyphicon glyphicon-time"></i>
+              <span><b>Cost:</b> {{ item.cost }}€</span>
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-time"></i>
+              <span><b>Duration:</b> {{ item.duration.h }}:{{ item.duration.m }}</span>
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-tags"></i>
+              <span><b>Discount:</b> {{ item.discount }}%</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+          <h3>
+            <a href="#" title=""
+              >{{item.departure}} > {{item.arrival}}</a
+            >
+          </h3>
+          <p>
+            Travel Reference: {{item.reference}}
+          </p>
+
+        </div>
+        <span class="clearfix borda"></span>
+      </article>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,58 @@
+<div class="container">
+  <form
+    [formGroup]="myForm"
+    novalidate
+    (ngSubmit)="save($event, myForm.value, myForm.valid)"
+  >
+    <div class="form-group">
+      <label class="label myLabel" for="exampleInputUserName">
+        From
+      </label>
+      <ng-select
+        #chosenOwner
+        placeholder="From"
+        [multiple]="false"
+        [items]="cityData"
+        bindLabel="id"
+        bindValue="name"
+        formControlName="from"
+      >
+      </ng-select>
+    </div>
+
+    <div class="form-group">
+      <label class="label myLabel" for="exampleInputUserName">
+        To
+      </label>
+      <ng-select
+        #chosenOwner
+        placeholder="To"
+        [multiple]="false"
+        [items]="cityData"
+        bindLabel="id"
+        bindValue="name"
+        formControlName="to"
+      >
+      </ng-select>
+    </div>
+
+    <div>
+      <div class="btn-group width100" role="group" aria-label="Basic example">
+        <button (click)="sort(0)" type="button" class="btn btn-secondary" [class.btn-info]="sortOrder==0">Cheapest</button>
+        <button (click)="sort(1)" type="button" class="btn btn-secondary" [class.btn-info]="sortOrder==1">Fastest</button>
+      </div>
+    </div>
+    <br/>
+    <div>
+      <button type="submit" class="btn btn-primary width100" [disabled]="!myForm.valid">
+        Search
+      </button>
+      <br/><br/>
+      <button type="button" class="btn btn-success width100" (click)="myForm.reset({}); searchClick.emit({});">
+        Reset
+      </button>
+    </div>
+
+
+  </form>
+</div>

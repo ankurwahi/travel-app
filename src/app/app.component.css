@@ -1,0 +1,10 @@
+.myContainer{
+  background: url("../assets/back.jpg");
+  height: 1080px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+.myRow{
+  padding-top: 50px;
+}
